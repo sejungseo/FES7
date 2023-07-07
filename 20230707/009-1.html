@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border-radius</title>
+  <style>
+    div {
+      float: left;
+      margin: 20px;
+    }
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      /* border: 10px dashed gold;
+      border-style: dashed double solid dotted; */
+      border-radius: 100%;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      border-radius: 10px;
+    }
+
+    .box3 {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      border-radius: 100% 0 0 0;
+      /* border-top-left-radius: 100%; */
+    }
+
+    .box4 {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      border-radius: 100% 0 100% 0;
+      /* border-top-left-radius: 100%; */
+      /* border-bottom-right-radius: 100%; */
+    }
+
+    .box5 {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      border-radius: 0 50% 0 50%;
+      /* border-top-right-radius: 50px; */
+      /* border-bottom-left-radius: 50px; */
+    }
+
+    .box6 {
+      width: 100px;
+      height: 50px;
+      background-color: royalblue;
+      border-radius: 100px 100px 0 0;
+      /* border-top-left-radius: 150px; */
+      /* border-top-right-radius: 150px; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="box4"></div>
+  <div class="box5"></div>
+  <div class="box6"></div>
+
+</body>
+
+</html>
