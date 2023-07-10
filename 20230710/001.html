@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스 꾸미기 실습</title>
+  <style>
+    div {
+      width: 250px;
+      height: 100px;
+      text-align: center;
+      line-height: 50px;
+      margin: 20px;
+      background-color: #343f50;
+    }
+
+    .box1 {
+      color: white;
+      border-style: solid;
+
+    }
+
+    .box2 {
+      border: 15px solid;
+
+      box-sizing: border-box;
+
+
+    }
+
+    .box3 {
+      color: white;
+      background: linear-gradient(90deg, #8000809d, #0000ffa1);
+      background-clip: padding-box;
+      border: 10px dashed #aa67aa9a;
+      border-radius: 50px;
+
+    }
+
+    .box4 {
+      background-color: white;
+      border: solid 5px #eee;
+      border-radius: 0 50px 50px 50px;
+      box-shadow: 5px 5px 7px 5px #eee;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    <h1>Hello✋</h1>
+  </div>
+  <div class="box2"></div>
+  <div class="box3">
+    <h1>Hello✋</h1>
+  </div>
+  <div class="box4">
+    <h1>Hello✋</h1>
+  </div>
+</body>
+
+</html>
