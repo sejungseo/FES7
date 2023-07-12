@@ -1,0 +1,65 @@
+body,
+h2,
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pretendard-Regular', sans-serif;
+  color: #5A6A72;
+}
+
+.card2-ui {
+  width: 288px;
+  height: 374px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.10);
+}
+
+.card2-ui img {
+  width: 100%;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+  /* margin: 12px 0 10px 0; */
+}
+
+.card2-ui .text-group {
+  padding: 16px ;
+}
+
+.card2-ui h2 {
+  font-family: 'Pretendard-Bold';
+  font-size: 16px;
+}
+
+.card2-ui content {
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.6;
+  height: calc(1em * 1.6 * 2);
+}
+
+.card2-ui .read {
+  text-decoration: underline;
+  font-family: 'Pretendard-Bold';
+  font-size: 14px;
+}
