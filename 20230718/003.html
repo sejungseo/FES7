@@ -38,6 +38,13 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      /* flex로 중앙 정렬 했는데 text-align 사용한 이유?
+        -> 위 3개에 div는 안에 내용 (normal,alternate,reverse)이 
+          div의 크기를 넘지 않아 여유 공간이 있어서 justify-content: center; 로 
+          div자체를 가로 기준 중앙 정렬이 가능하지만, 
+          alternate-reverse는 이미 div의 크기에 꽉차 있어서 
+          div자체를 중앙정렬 할 수 없으니 내용물을 중앙 정렬시키는 text-align: center; 을 사용해야 한다.
+           */
     }
 
     .wrap div~div {
