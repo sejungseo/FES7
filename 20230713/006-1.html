@@ -1,51 +1,23 @@
-.btn {
-width: 88px;
-height: 32px;
-border-radius: 0;
-border: 1px solid #1a202c;
-background-color: #343f50;
-color: #cbd5df;
-}
+<!DOCTYPE html>
+<html lang="ko-KR">
 
-.btn:enabled {
-box-shadow: inset 1px 1px 0 0 #4a5568;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button</title>
+  <link rel="stylesheet" href="./006-1.css">
+</head>
 
-.btn:disabled {
-border: 1px solid #343e4e;
-background-color: #3a4556;
-color: #4a5568;
-}
+<body>
+  <button class="btn" type="button">Button</button>
+  <button class="btn positive" type="button">Yes</button>
+  <button class="btn negative" type="button">Del</button>
 
-.btn:enabled:hover {
-color: white;
-text-decoration: underline;
-}
+  <button class="btn" type="button" disabled>Button</button>
 
-.btn:enabled:active {
-box-shadow: inset 1px 1px 0 0 #262f3e;
-}
+  <p class="message positive">정보 메시지</p>
+  <p class="message negative">에러 메시지</p>
+</body>
 
-.positive {
-color: #439aff;
-}
-.positive:enabled:hover {
-background-color: #439aff;
-border: 1px solid #439aff;
-box-shadow: inset 1px 1px 0 0 #73b4ff;
-}
-.positive:enabled:active {
-box-shadow: inset 1px 1px 0 0 #3b78be;
-}
-
-.negative {
-color: #eb5757;
-}
-.negative:enabled:hover {
-background-color: #eb5757;
-border: 1px solid #eb5757;
-box-shadow: inset 1px 1px 0 0 #fd6f6f;
-}
-.negative:enabled:active {
-box-shadow: inset 1px 1px 0 0 #d94242;
-}
+</html>
