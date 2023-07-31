@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      video {
+        /* max-width: 100%; */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 100%;
+        opacity: 0.2 /*흐림효과*/;
+        /* pointer-events: none; 클릭시 아무런 상호작용 하지 않음 */
+        /* height: 100vh; */
+        /* 가로와 세로의 종횡비가 있으므로 높이 비율에 넓이가 자동으로 맞춰짐  */
+      }
+
+      article {
+        position: relative;
+        /* padding-top: 56.25%; */
+        /* 종횡비 = 높이 / 넓이 * 100 */
+        height: 56.25vw;
+        /* aspect-ratio: 16/9; */
+      }
+      .video-next-level {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+</head>
+<body>
+    <!-- <video autoplay controls loop muted src=""></video> -->
+    <!-- controls 속성을 주면 클릭했을 때 작동함 -->
+
+    <iframe class="video-next-level"
+      src="https://www.youtube.com/embed/4TWR90KJl84?autoplay=1&mute=1&loop=1&playlist=4TWR90KJl84&controls=1"
+      title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+.wrapper {
+  box-shadow: inset 0 0 20px red;
+  width: 800px;
+  margin: 100px auto; /*margin은 상하단 auto 불가능. 내 마당이 아님*/
+  text-align: center; /*부모에게 주어야함. 자식요소들이 인라인이니까 내부에 있는 인라인에 영향을 끼쳐 가운데 정렬*/
+}
+.fruit {
+  background-color: gold;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  line-height: 200px; /*위아래에 균등한 상하단 공간이 생김*/
+  border-radius: 50%;
+  /* vertical-align: bottom; */
+  /* padding: 20px; inline padding은 상하단 공간을 차지하지 않음 */
+}
+
+.fruit.lemon {
+  background-color: antiquewhite;
+}
+.fruit.lemon {
+  background-color: orange;
+}
+.fruit.lemon {
+  background-color: orangered;
+}
+
+
+
+/* 순서의존에 따라 유지보수가 어려움 */
+/* .fruit:nth-child(1) {
+  background-color: lemonchiffon;
+}
+.fruit:nth-child(2) {
+  background-color: orange;
+}
+.fruit:nth-child(3) {
+  background-color: orangered;
+} */
+
+
+/* .wrapper a.silver {
+  background-color: silver;
+}
+.wrapper a.gold {
+  background-color: gold;
+  height: 400px;
+}
+.wrapper a.bronze {
+  background-color: burlywood;
+  height: 100px;
+} */

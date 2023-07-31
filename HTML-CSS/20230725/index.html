@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* input 숨기기 */
+      .txt-hide {
+        overflow: hidden; /* 방탄코드: 자식요소의 콘텐츠가 넘쳐 보이는 것까지 숨김처리 */
+        width: 1px;
+        height: 1px;
+        clip-path: inset(50%); /*clip(자르다) path(경로) 경로에따라 html 요소를 잘라낸다*/
+        /* width:0 height:0 으로 숨기면 스크린리더가 읽지 못해 접근성 문제 발생해 최소 1px은 남김 */
+      }
+      .labl-hold {
+        position: relative;
+      }
+      .labl-hold::before {
+        display: inline-block;
+        content: '';
+        width: 22px;
+        height: 22px;
+        /* 가상요소는 인라인이라 너비 높이 적용되지 않음 -> inline-block 지정해야함 */
+        margin-right: 10px;
+        border: 1px solid black;
+        vertical-align: -5px;
+      }
+      .inphold:focus-visible+.labl-hold::before{
+        outline: 2px solid teal;
+        outline-offset: 3px; /* 얼마나 더 확장시킬 수 있는지*/
+
+      }
+
+      .labl-hold::after {
+        content: '';
+        position: absolute; /*position 속성 적용하면 display:block 처리됨 => position 적용했을 때는 block/inline-block 따로 적용할 필요없음*/
+        top: -3px;
+        left: 20px;
+        width: 22px;
+        height: 22px;
+
+        /* background-image: url('images/checkmark.png');
+        background-size: 22px;
+        background-repeat: no-repeat; */
+        /* 단축속성 */
+        background: url('images/checkmark.png') 0 0/22px no-repeat;
+
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .inphold:checked+.labl-hold::after {
+        left: 0;
+        opacity: 1;
+      }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="inpHold" class="txt-hide inphold">
+    <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
+</body>
+</html>

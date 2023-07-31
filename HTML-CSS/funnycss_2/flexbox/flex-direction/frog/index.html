@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexing</title>
+        <style>
+            body {
+                background-color: brown;
+            }
+            .playground {
+                border: 10px solid maroon;
+                width: 980px;
+                margin: 0 auto;
+                border-radius: 20px;
+                background-color: skyblue;
+                display: flex;
+            }
+            .frog {
+                background-color: mediumseagreen;
+                color: lime;
+                font-size: 40px;
+                margin: 10px;
+                border: 6px solid green;
+                border-radius: 10px;
+                flex-basis: 200px; /*너비. 초기값 auto - 컨텐츠 크기만큼 너비 줌.*/
+                flex-grow: 1; /*basis(컨텐츠)를 제외한 너비의 비율. 초기값 0*/
+                flex-shrink: 1; /*수축. 줄어들어야 하는 상황이 오면 다같이 수축 공동부담. 초기값 1*/
+            }
+            .frog.covid {
+                background-color: orangered;
+                /* margin: 10px auto; */
+            }
+            .frog.sun {
+                flex-shrink: 0;
+            }
+            .frog.cry {
+                flex-shrink: 200;
+            }
+            /* 가운데정렬 */
+            /* .frog:first-child {
+                margin-left: auto;
+            }
+            .frog:last-child {
+                margin-right: auto;
+            } */
+        </style>
+    </head>
+    <body>
+
+        <div class="playground">
+            <div class="frog"><img src="images/frog-cry.png"></div>
+            <div class="frog"><img src="images/frog.png"></div>
+            <div class="frog"><img src="images/frog.png"></div>
+            <div class="frog"><img src="images/frog-dj.png"></div>
+            <div class="frog"><img src="images/frog-disco.png"></div>
+        </div>
+
+    </body>
+</html>
