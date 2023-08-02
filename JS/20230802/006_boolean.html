@@ -9,14 +9,16 @@
   <!-- true, false -->
   <script>
     // true(참, 1), false(거짓, 0)
-    // &&(and, 논리곱), ||(or, 논리합), !(not, 부정)
+    // &&(and, false, 논리곱), ||(or, true, 논리합), !(not, 부정)
     // &(and, 비트논리곱), |(or, 비트논리합), ~(not, 비트부정)
 
     // and나 or도 뒤를 볼 필요가 없으면 보지 않습니다!
 
-    Boolean('가')
+    Boolean('가') 
     !!'가'
     !!''
+    //문자가 있으면 true
+    //문자가 없으면 false
 
     // and(논리곱)
     console.log(true && true)
@@ -24,8 +26,9 @@
     console.log(false && true)
     console.log(false && false)
     // 어려운 내용입니다.
-    console.log('가' && '나')
-    console.log('' && '나')
+    console.log('가' && '나') 
+    console.log('' && '나')  
+    //앞의 값이 false면 앞의 값이 찍히고 앞의 값이 false가 아니면 뒤의 값이 찍힌다.
 
     // or(논리합)
     console.log(true || true)

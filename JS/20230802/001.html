@@ -43,7 +43,7 @@ junho, lee`
     ss.includes('CTO') // true
     ss.includes('CEO') // false
 
-    // 메서드 채이닝
+    // 메서드 채이닝 : 메소드를 고리마냥 줄줄이 엮어서 계속해서 사용할 수 있게끔 하는 방법
     // 메서드 채이닝은 길어지면 가독성이 떨어집니다. 가독성을 위해 개행을 해주시면 좋습니다.
     sss.replace('CEO', 'CFO').includes('CEO').toString().toUpperCase()
     sss
@@ -78,20 +78,20 @@ junho, lee`
     let text5 = text4.replace(',', '-')
     text5.split('-')
 
-    // trim
+    // trim 문자 앞뒤의 공백 제거
     let text6 = '    aa bb cc dd    '
     text6.trim() // 'aa bb cc dd'
     text6.replaceAll(' ', '') // 'aabbccdd'
 
-    // padStart
-    let text7 = '123'
-    text7.padStart(5, '0') // '00123'
+    // padStart 문자열의 길이가 남는 만큼 뒤에 적은 문자를 앞에 추가
+    let text7 = '123' //문자열의 길이가 3
+    text7.padStart(5, '0') // '00123' 
     // 카카오 입사문제 일부(padStart, replace만 사용)
     // 우리의 목표: 00101 -> '  # #'
     let text8 = '101'
     text8.padStart(5, '0').replaceAll('0', ' ').replaceAll('1', '#')
 
-    // concat
+    // concat 두 개의 문자열을 하나의 문자열로 만들어줌
     text1.concat(text2)
   </script>
 </body>
