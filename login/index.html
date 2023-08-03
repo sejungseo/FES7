@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 또는 회원가입</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="title">로그인 또는 회원가입</h1>
+      <button type="button" class="close"></button>
+    </header>
+
+    <main class="main">
+      <h2 class="main-title">위니브에서 여러분의 궁금증을 해결하세요! :)</h2>
+      <section>
+        <!-- 로그인 -->
+        <form class="login-form">
+            <label for="user-id" class="a11y-hidden">아이디</label>
+            <input type="text" id="user-id" placeholder="아이디">
+            <p class="required-id">아이디를 입력해 주세요.</p>
+            <label for="user-pw" class="a11y-hidden">비밀번호</label>
+            <input type="password" id="user-pw" placeholder="비밀번호">
+            <p class="required-pw">아이디 혹은 비밀번호와 일치하지 않습니다. </p>
+
+            <div class="login-keep">
+              <input class="input-keep a11y-hidden" type="checkbox" id="inphold">
+              <label class="label-keep" for="inphold">로그인 상태 유지</label>
+            </div>
+            
+          <button type="button" class="btn-login">로그인</button>
+        </form>
+
+        <!-- 회원가입 & 아이디/비밀번호 찾기 -->
+        <div class="link-login-info">
+          <a href="#">회원가입</a>
+          <span>|</span>
+          <a href="#">아이디/비밀번호 찾기</a>
+        </div>
+      </section>
+
+      <!-- sns 로그인 -->
+      <section class="login-sns">
+        <!-- ::before -->
+        <div class="btn-login-sns">
+          <form class="btn-login-sns-form">
+            <button type="button" class="sns-btn google">구글계정으로 로그인</button>
+            <button type="button" class="sns-btn facebook">페이스북 계정으로 로그인</button>
+            <button type="button" class="sns-btn naver">네이버 계정으로 로그인</button>
+            <button type="button" class="sns-btn kakao">카카오톡 계정으로 로그인</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>
