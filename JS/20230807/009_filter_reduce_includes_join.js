@@ -32,8 +32,8 @@ result
 [10, 20, 30, 40, 50].reduce((a, c) => a + c) // X 에러코드
 [].reduce((a, c) => a + c) // X 에러코드
 [10, 20, 30, 40, 50].reduce((a, c) => {
-  console.log(a, c)
-  return a + c
+    console.log(a, c)
+    return a + c
 })
 
 // 파라미터 이름은 자유롭게 지정할 수 있습니다.
