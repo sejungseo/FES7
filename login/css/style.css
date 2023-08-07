@@ -60,6 +60,7 @@ button:enabled {
 
 .wrapper {
   width: 520px;
+  /* width는 고정값 말고 max-width로 반응형 적용하기 */
   margin: 100px auto;
   border-radius: 10px;
   border: 1px solid #C4C4C4;
@@ -79,9 +80,10 @@ button:enabled {
 }
 
 .close {
+  /* 버튼은 padding으로 범위 키워서 사용자가 x 이미지 주변 근처를 눌러도 작동할 수 있게끔 처리하기 */
   width: 16px;
   height: 16px;
-  background-image: url(../images/close.png);
+  background-image: url(../images/close.png); 
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -205,6 +207,7 @@ button:enabled {
   gap: 10px;
 }
 
+/* 반응형 고려를 위해 버튼의 높이를 고정값으로 지정하지 않고 padding으로 처리 */
 .sns-btn {
   padding: 15px;
   color: #767676;
