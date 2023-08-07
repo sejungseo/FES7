@@ -70,11 +70,18 @@ Type(x)가 NaN이면 false를 반환합니다. y가 NaN이면 false를 반환합
 
 console.log(0 / 0); // NaN
 console.log(10 / 0); // Infinity
-console.log('hello world' - 100) // NaN
+console.log('hello world' - 100) // NaN 
 console.log('hello world' / 100) // NaN
 console.log('hello world' * 100) // NaN
 console.log('2' * 10) // 20
 console.log("---");
+
+// NaN을 반환하는 경우
+// 숫자로서 읽을 수 없는 경우 ex) parseInt('blahblah'), Number(undefined)
+// 결과가 허수인 수학 계산식 ex) Math.sqrt(-1)
+// 피연산자가 NaN인 경우 ex) (7 ** NaN)
+// 정의할 수 없는 계산식 ex) (0 * Infinity)
+// 문자열을 포함하면서 덧셈이 아닌 계산식 ex) ("안녕" / 3)
 
 
 // 암기
