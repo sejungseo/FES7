@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+      ////while문 
+      let num = 0;
+
+        while (num < 11) {
+          document.write(num, '<br>');
+          num += 1; 
+        }
+
+      ////do while문
+      let input;
+
+        do {
+          // console.log('hello'); 아래줄처럼 input을 넣지 않고 console.log로 넣어주면 무한루프에 빠져 계속 반복하게 됨
+          input = prompt("숫자를 입력하세요.");
+        } while (isNaN(input)); // isNaN => 함수의 인자가 숫자인지 아닌지 판단
+
+        console.log("입력한 숫자는 " + input + "입니다.");
+
+        //////////////////////
+
+      let num = 0;
+        while (num < 11) {
+          num++;
+          document.write(num, '<br>');
+          if (num > 5) {
+            break;
+          }
+        }
+        
+        ///////////////////////
+
+        let num = 0;
+
+        do {
+            document.write(num, '<br>');
+            num += 1;
+        } while (num < 11);
+        let input;
+
+        ///////////////////////
+
+      let i = 0;
+        while (i < 100) {
+          i++;
+          console.log(i + '살입니다.');
+          if (i === 14) {
+            console.log(i + '살 부터 중학생이 됩니다.');
+            break;
+          }
+        }
+        console.log('중학교 입학을 축하합니다');
+    </script>
+</body>
+</html>

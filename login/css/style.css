@@ -59,7 +59,7 @@ button:enabled {
 /* wrapper */
 
 .wrapper {
-  width: 520px;
+  max-width: 520px;
   /* width는 고정값 말고 max-width로 반응형 적용하기 */
   margin: 100px auto;
   border-radius: 10px;
@@ -77,6 +77,7 @@ button:enabled {
 .header .title {
   font-size: 16px;
   text-align: center;
+  font-weight: bold;
 }
 
 .close {
@@ -101,6 +102,7 @@ button:enabled {
   font-size: 20px;
   line-height: 120%;
   margin-bottom: 24px;
+  font-weight: bold;
 }
 
 /* 아이디 비밀번호 입력 */
@@ -189,7 +191,7 @@ button:enabled {
 }
 
 /* 구분선 */
-.login-sns::before {
+.btn-login-sns::before {
   content: '또는';
   color: #767676;
   font-size: 14px;

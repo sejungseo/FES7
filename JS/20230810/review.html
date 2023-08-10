@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      const avengers = ['spiderman', 'ironman', 'hulk', 'thor'];
+      //avengers.splice(1, 1, 'hurk');
+      avengers.slice(0, 2); // 요소를 제거하지 않고 원본의 배열에서 값을 뽑아서 새로운 배열 생성. 원본유지
+      
+      sort() // 유니코드 정렬순
+      const arr = ['나', '가', '사', '바'];
+      arr.sort();
+      arr.sort(function(a, b)){ // a, b는 배열의 요소.
+        return a - b; // 이 형태로 문자열 비교는 불가능. compare함수를 변경해야함
+      }
+    </script>
+</body>
+</html>

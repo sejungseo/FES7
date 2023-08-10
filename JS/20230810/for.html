@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+      // 문제1. 전달받은 객체의 키와 벨류값을 모두 출력하는 for문을 만들어보세요.
+      const person = {
+        name: ‘재현’,
+        age: 20,
+        gender: 'male'
+      };
+
+      const props = Object.keys(person); // 반복되는 부분이므로 변수 설정해서 가독성을 높임
+      console.log(props);
+
+      for(let i = 0; i < props.length; i++){
+        console.log(`key: ${props[i]} , value: ${person[props[i]]}`); //person[key이름] 괄호 & 멤버 접근 연산자(.)
+      }
+      
+      //////////////////////////////////
+
+      for (let i = 0; i < 20; i++) {
+          console.log('아가입니다');
+          if (i < 13) continue;
+          console.log(i + '살은 청소년입니다.');
+        }
+
+      outer: for (let i = 0; i < 3; i++) {
+          for (let j = 0; j < 3; j++) {
+            if (i + j === 3) {
+              break outer;  //continue outer;
+            }
+            console.log(i, j);
+          }
+        }
+
+      // 문제. 사용자가 입력한 메뉴 번호에 따라 해당하는 메뉴 이름과 가격을 출력합니다.만약 종료 번호를 누르면 ‘종료합니다’ 를 콘솔에 출력합니다.
+      const menu = [
+          { name: "아메리카노", price: 2000 },
+          { name: "카페라떼", price: 2500 },
+          { name: "카페모카", price: 2800 },
+          { name: "핫초코", price: 3000 },
+          { name: "과일주스", price: 3500 },
+        ];
+        const props = Object.keys(name);
+        input = prompt('메뉴 번호를 입력해 주세요')
+
+        for(let i = 0; i < props.length; i++){
+          console.log(prompt())
+        }
+
+    </script>
+</body>
+</html>

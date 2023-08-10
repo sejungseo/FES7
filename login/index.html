@@ -12,24 +12,26 @@
 <body>
   <div class="wrapper">
     <header class="header">
-      <h1 class="title">로그인 또는 회원가입</h1>
+      <h1 class="a11y-hidden">로그인, 소셜로그인, 아이디/비밀번호 찾기, 회원가입</h1>
+      <p class="title">로그인 또는 회원가입</p>
       <!-- h1에 로그인, 소셜로그인, 회원가입, 아이디/비밀번호 찾기 넣고 숨김처리 후 p태그로 보이는 내용 입력 처리 -->
       <button type="button" class="close"></button>
     </header>
 
     <main class="main">
-      <h2 class="main-title">위니브에서 여러분의 궁금증을 해결하세요! :)</h2>
+      <h2 class="a11y-hidden">로그인 폼</h2>
+      <p class="main-title">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
       <!-- 이건 제목이라고 할 순 없으므로 제목을 따로 짓고 숨긴 다음에 위니브에서~ 문구는 p 태그로 하는 게 더 적절함 -->
       <section>
         <!-- 로그인 -->
         <form class="login-form">
             <label for="user-id" class="a11y-hidden">아이디</label>
             <input type="text" id="user-id" placeholder="아이디">
-            <p class="required-id">아이디를 입력해 주세요.</p>
+            <strong class="required-id">아이디를 입력해 주세요.</strong>
             <!-- p태그보단 strong/em 태그 쓰기 -->
             <label for="user-pw" class="a11y-hidden">비밀번호</label>
             <input type="password" id="user-pw" placeholder="비밀번호">
-            <p class="required-pw">아이디 혹은 비밀번호와 일치하지 않습니다. </p>
+            <strong class="required-pw">아이디 혹은 비밀번호와 일치하지 않습니다. </strong>
 
             <div class="login-keep">
               <input class="input-keep a11y-hidden" type="checkbox" id="inphold">
