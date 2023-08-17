@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+      const person = function () { // person은 함수 //return을 만나면서 제거됨
+        let age = 15; // age에 15 할당 
+
+        return { // 함수니까 return //객체도 return 가능
+          name: 'sejung', // return값은 객체
+
+          getAge: function() { // === getAge() {
+            return age; // age = 15 //getAge가 작동해야 age를 return //일단 객체를 반환하고 그 객체의 메서드를 실행시킬 때 반환하는 값
+          },
+
+          setAge: function (val) { // === setAge(val) {
+            age = val
+          }
+        }
+      }
+
+      const man = person();
+
+
+      const outer = function () {
+        let a = 1; //inner만 접근할 수 있음. return 키워드 만나서 제거되었으나 inner가 참조하는 a값은 사용가능. 접근할 수 없이 폐쇄된 공간=>클로저
+
+        const inner = function () {
+          let b = 5;
+          let c = 6;
+          a = a + b + c; //outer의 a를 참조하고 있음
+
+          console.log(a);
+        }
+
+        return inner;
+      }
+
+      const newInner = outer();
+      
+      newInner();
+    </script>
+</body>
+</html>

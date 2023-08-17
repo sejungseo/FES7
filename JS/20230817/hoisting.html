@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+      // var x; (호이스팅)
+      console.log(x);
+      console.log(y);
+      console.log(z);
+      
+
+
+      // x = 1; (호이스팅 됐을 때 해석되는 방법)
+      var x = 1; // undefined. var로 선언된 x에 주목. 호이스팅에 의해 변수와 함수가 해당 스코프의 최상단(여기서는 전역)으로 끌어올려짐.
+      let y = 2; // 초기화 전에 y에 접근할 수 없다는 오류 발생 => TDZ
+      const z = 3; // 초기화 전에 z에 접근할 수 없다는 오류 발생 => TDZ
+
+      //function test() { // 함수 선언도 호이스팅 가능
+      const test = function () {  // 함수의 호이스팅을 막기 위한 표현식. const를 사용해서 TDZ 적용
+        console.log('test');
+      }
+
+      test();
+
+
+
+      function reverse(text) {
+          console.log(text);
+          if (text.length <= 1) {
+            return text
+          }
+          return reverse(text.slice(1)) + text[0]
+        }
+
+
+
+        console.log(reverse('hello'));
+
+        function factorial(n) {
+          if (n <= 1) {
+            return n
+          }
+          return n * factorial(n - 1)
+        }
+
+        console.log(factorial(5));
+        // 5 * 4 * 3 * 2 * 1
+
+        // var x;
+        // console.log(x);
+        // console.log(y);
+        // console.log(z);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+      // let a = new Set('abc'); //new 키워드가 붙어있으면 객체를 반환하는구나 알 수 있음
+      // let b = new Set('cde');
+
+      // const cross = [...a].filter((value) => {
+      //   return b.has(value);
+      // });
+
+      // const union = new Set([...a].concat([...b]));
+
+      // const differ = [...a].filter(() => { // 화살표함수에서 중괄호가 있으면 return필수. 중괄호 생략 시 return 생략!
+      //   return !b.has(value);
+      // })
+
+
+
+      // 문제.1부터 45까지 중복없이 6개 숫자 뽑기 (20230810_random.html)
+        function lottoGenerator() {
+          // const lottArr = [];
+          const lottoSet = new Set();
+
+          while (lottoSet.size < 6) {
+
+            // 1~ 44.999...
+            const result = parseInt(Math.random() * 45 + 1);
+
+            // if (!lottArr.includes(result)) { // 안의 값이 false인 경우 true로 변환
+            //   lottArr.push(result);
+            // }
+
+            lottoSet.add(result); //set객체는 중복된 값을 허용하지 않고 무시하므로 if 조건문 넣지 않아도 됨
+
+          }
+          // return lottArr;
+          return lottoSet;
+        }
+        console.log(lottoGenerator());
+    </script>
+</body>
+</html>
