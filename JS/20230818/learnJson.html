@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      const json = '{"result": true, "count": 42}'; //문자열이어야 하므로 따옴표로 감싸주기
+      const obj = JSON.parse(json);
+      console.log(obj);
+
+      const json2 = '[1, 2, 3]'; // 배열도 가능
+      const arr = JSON.parse(json2);
+      console.log(arr); //arr instanceof Array
+
+      const json = '[1, 2, 3, [1, 2, 3]]'; // 이중배열
+      const obj = JSON.parse(json);
+      console.log(obj);
+
+      const obj2 = { result: true, count: 42 }; // 객체
+      const json3 = JSON.stringify(obj2);
+      console.log(json3);
+
+      
+      // JSON을 이용한 깊은 복사 (데이터 자체를 복사) 얕은복사(데이터 주소를 복사)
+      // l 객체를 문자열화 했다가 다시 객체로 변환하기 때문에 새로운 객체를 생성하는것과 동일합니다. 하지만 함수는 제대로 복사가 불가능하다는 단점이 있습니다. 제대로된 깊은 복사를 위해서는 structuredClone 메소드를 사용해야합니다.
+      let l = [10, 20, 30];
+      let a = JSON.parse(JSON.stringify(l));
+      a[0] = 1000; // a = [1000, 20, 30]
+
+      console.log(l); // l = [10, 20, 30]
+
+      
+      let l = { ten: 10, twndty: 20, thirty: {forty: 40}};
+      let a = JSON.parse(JSON.stringify(l));
+      a.thirty.forty = 100; // a = { ten: 10, twndty: 20, thirty: {forty: 100}}
+
+      console.log(l); // l = { ten: 10, twndty: 20, thirty: {forty: 40}}
+
+
+      let l = { ten: 10, twndty: 20, thirty: { forty: 40 } };
+      let a = structuredClone(l);  //{ ten: 10, twndty: 20, thirty: { forty: 40 } };
+      //a.thirty.forty = 100; // a = { ten: 10, twndty: 20, thirty: {forty: 100}}
+    </script>
+</body>
+</html>

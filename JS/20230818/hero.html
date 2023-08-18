@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      // 최신버전
+      // async function fetchRequest(){
+      //   const response = await fetch();
+      //   const jsonData = await response.json();
+      // }
+
+      // 옛날버전
+      let jsonObj = '';
+
+      // function xhrRequest(){ // 절차지향적으로 실행되지 않고 비동기적 진행(<->동기적 진행)
+      //   const requestObj = new XMLHttpRequest(); //객체 생성시 생성자함수 필요
+      //   requestObj.open('GET', 'heros.json'); //open-통신을 하겠다 //인자1: GET-데이터를 요청하겠다, 인자2: 주소
+      //   requestObj.send(); //객체를 만들고 open 메서드를 통해 받은 데이터를 서버에 보냄
+      //   requestObj.onreadystatechange = () => { // onreadystatechange: 변화가 감지되면 함수를 실행시킴
+      //     jsonObj = requestObj.responseText; // responseText: 서버의 응답이 담김
+      //   } 
+      //   console.log(jsonObj);
+      //   JSON.parse(jsonObj);
+      // }
+
+      function xhrRequest() { // 절차지향적으로 실행되지 않고 비동기적 진행(<->동기적 진행)
+          const requestObj = new XMLHttpRequest(); //객체 생성시 생성자함수 필요
+          requestObj.open('GET', 'heros.json'); //open-통신을 하겠다 //인자1: GET-데이터를 요청하겠다, 인자2: 주소
+          requestObj.send(); //객체를 만들고 open 메서드를 통해 받은 데이터를 서버에 보냄
+          requestObj.onreadystatechange = () => { // onreadystatechange: 변화가 감지되면 함수를 실행시킴
+            if (requestObj.readyState === 4 && requestObj.status === 200) { //전자 4: 서버로 요청을 하고 응답을 받아 통신작업이 끝난 상태, status:서버가 client에게 전달하는 정보
+              jsonObj = JSON.parse(requestObj.responseText);
+            }
+          }
+        }
+
+        xhrRequest();
+    </script>
+</body>
+</html>
