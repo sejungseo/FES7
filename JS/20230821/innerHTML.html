@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      p {
+      /* p {
         text-align: center;
-      }
+      } */
     </style>
 </head>
 <body>
-    <p>hello</p>
+    <p style="text-align: center;">hello</p>
     <input type="text">
     <button>작동!</button>
 
@@ -24,7 +24,7 @@
       btn.addEventListener('click', function() {
         // text.textContent = inp.value; //textContent - 전달 받은 값을 문자열 그 자체로 인식
         text.textHTML = inp.value; 
-      })
+      });
     </script>
 </body>
 </html>

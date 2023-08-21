@@ -23,6 +23,12 @@
       const msg = '경고!!';
       console.log(cost.textContent);
       console.log(cost.innerText);
+      cost.innerHTML =
+          `<dialog>
+                <div>
+                    <p>${msg}</p>
+                </div >
+            </dialog>`;
     </script>
 </body>
 </html>
