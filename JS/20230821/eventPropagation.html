@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <article class="parent">
+    <button class="btn" type="button">버튼</button>
+  </article>
+
+  <script>
+    const parent = document.querySelector('.parent');
+    const btnFirst = document.querySelector('.btn');
+    btnFirst.addEventListener('click', (event) => { // event는 쓸 수도 있고 안 쓸 수도 있고 상관x
+      console.log("btn capture!"); // 버블링이기 때문에 캡처링 이벤트가 다 끝나고 실행됨
+    }) // true 입력해서 캡처링이 되어도 부모에서 자식 순으로 내려가기 때문에 해당 순서 때 콘솔에 찍힘
+
+    window.addEventListener('click', () => {
+      console.log("window capture!");
+    }, true); // true : 캡처링 단계의 이벤트가 발생하도록 합니다. 세번째 매개변수 true
+
+    document.addEventListener('click', () => {
+      console.log("document capture!");
+    }, true); // 캡처링
+
+    parent.addEventListener('click', () => {
+      console.log("parent capture!");
+    }, true); // 캡처링
+
+    btnFirst.addEventListener('click', (event) => {
+      console.log("btn bubble!");
+    }) // 세번째 인자가 아무것도 없으면 false => 버블링 이벤트
+
+    parent.addEventListener('click', () => {
+      console.log("parent bubble!");
+    }); // 버블링
+
+    document.addEventListener('click', () => {
+      console.log("document bubble!");
+    }); // 버블링
+
+    window.addEventListener('click', () => {
+      console.log("window bubble!");
+    }); // 버블링
+  </script>
+</body>
+
+</html>

@@ -55,7 +55,7 @@
 
         btns.forEach(function (itemBtn) {
             itemBtn.addEventListener('click', function () {
-                canvas.className = 'canvas'; 
+                canvas.className = 'canvas'; //초기화
                 canvas.classList.add(itemBtn.className);
             });
         })
@@ -74,7 +74,7 @@
         // });
 
 
-         // btnRed.addEventListener('click', function () {
+        // btnRed.addEventListener('click', function () {
         //     canvas.classList.remove('red', 'yellow', 'green');
         //     canvas.classList.add('red');
         // });

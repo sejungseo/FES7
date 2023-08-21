@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent"></div>
+
+    <!-- btn 클릭시 li 한번에 여러개 만들기 -->
+    <ul></ul>
+    <button>생산시작!</button>
+    <!-- btn 클릭시 li 한번에 여러개 만들기 -->
+    <div id="parentElement">
+      <span id="childElement">hello guys~</span>
+    </div>
+
+    <script>
+      const text = document.createElement('p'); //p는 가상돔(메모리 공간에만 존재) //p태그 생성
+      //상수text가 가상공간에 있는 p태그를 참조
+      const text2 = document.createElement('p');
+      const textInside = document.createTextNode('문장입니다.'); // p태그 내 내용 추가  // 중복사용 불가능. 한 번씩만 사용 가능. 필요시 추가해서 사용
+      //요소 추가 하려면 .createElement와 .createTextNode 둘 다 매번 써줘야함
+      text.appendChild(textInside);
+      text2.appendChild(textInside);
+
+      const parent = document.querySelector('.parent');
+
+      // parent.appendChild(text); 
+      // parent.appendChild(text2);
+      
+      parent.append(text, text2); // .appendChild 대신 여러개 요소 한번에 추가 // appendChild보다 append가 더 나음
+      parent.append('text 입니다~', text, text2); // 텍스트추가
+
+      // parent.removeChild(text2);//p태그 제거 //특정 요소의 자식태그를 지움(부모 자식 둘 다 알아야함)
+      // parent.remove();
+
+
+      // btn 클릭 시 li 한번에 여러개 만들기1
+      // const myBtn = document.querySelector("button");
+      //   const myUl = document.querySelector("ul");
+
+      //   myBtn.addEventListener('click', function () {
+      //     for (let i = 0; i < 5; i++) {
+      //       const myLi = document.createElement('li');
+      //       myUl.appendChild(myLi);
+      //     }
+      //   })
+
+
+      // li 삭제하기 버튼 만들기
+        const myBtn = document.querySelector("button");
+        const myUl = document.querySelector("ul");
+
+        myBtn.addEventListener('click', function () {
+          for (let i = 0; i < 5; i++) { // 5번 만들기
+            const myLi = document.createElement('li');
+            const btnDel = document.createElement('button');
+            const btnTxt = document.createTextNode('버튼');
+
+            btnDel.append(btnTxt); // 자식으로 apoend
+            btnDel.addEventListener('click', () => { // 5개의 버튼에 click event추가
+              myLi.remove(); // li 삭제
+            });
+            myLi.append('삭제하기: ', btnDel); // 텍스트와 버튼 둘 다 append
+            myUl.appendChild(myLi);
+          }
+        });
+
+
+        // 첫번째 자식 요소로 붙이기
+        // parentElement.insertBefore(target, location); target요소를 parentElement의 자식인 location 위치 앞으로 이동합니다.
+
+          var span = document.createElement("span");
+          var sibling = document.getElementById("childElement");
+          var parentDiv = document.getElementById("parentElement");
+          parentDiv.insertBefore(span, sibling);
+    </script>
+</body>
+</html>

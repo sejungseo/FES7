@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <form action="">
+      <input type="text">
+      <button>버튼!</button>
+    </form>
+
+    <script>
+      const form = document.querySelector('form');
+      const btn = document.querySelector('button');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault(); // preventDefault => form의 submit 이벤트를 중단시킴
+        console.log('hello submit');
+      }, true); // 캡처링 이벤트로 설정했음에도 불구하고 button이 먼저 콘솔 실행됨 => 버튼을 누르는 이벤트보다 후에 진행됨
+
+      btn.addEventListener('click', () => {
+        console.log('hello button');
+      });
+    </script>
+</body>
+</html>

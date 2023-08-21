@@ -9,16 +9,20 @@
 <body>
     <script>
       const person = function () { // person은 함수 //return을 만나면서 제거됨
-        let age = 15; // age에 15 할당 
+        let age = 15; // person이 return되면 person이라는 함수는 사라진다.
+        // 하지만 age는 어딘가 메모리에 남아있다.
 
         return { // 함수니까 return //객체도 return 가능
-          name: 'sejung', // return값은 객체
+          // 이유는 내부 메서드에서 age를 참조하고 있기 때문이다.
+          name: 'sejung', // return값은 객체 //age에 대한 접근 권한은 return 객체에만 있다.
 
-          getAge: function() { // === getAge() {
+          getAge: function() { // === getAge() { 
+            // getAge를 통해서만 접근하고
             return age; // age = 15 //getAge가 작동해야 age를 return //일단 객체를 반환하고 그 객체의 메서드를 실행시킬 때 반환하는 값
           },
 
           setAge: function (val) { // === setAge(val) {
+            // setAge를 통해서만 수정 가능하다.
             age = val
           }
         }
