@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>나의 todo list</h1>
-    <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>1. 오늘 저녁에는 부대찌개를 끓여 먹겠다.<button type="button">삭제</button></p>
     <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
     <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
 
@@ -29,7 +29,7 @@
         item.addEventListener('click', (event) => {
           const result = confirm('삭제하시겠습니까?');
 
-          event.stopPropagation(); // 이벤트 전파를 막음
+          event.stopPropagation(); // 이벤트 전파를 막음 // 이걸 안 쓰면 버블링으로 인해서 버튼이 p태그 안에 있어서 p태그에도 영향을 줌
 
           if (result) {
             item.closest('p').remove();

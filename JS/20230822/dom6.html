@@ -17,7 +17,8 @@
 
         // 기본 기능을 막습니다.
         event.preventDefault(); // 동작을 막음
-        console.log('submit');
+        console.log('submit'); // button type의 submit의 기본값은 새로고침
+        // => submit의 새로고침 기능을 막아줌
 
         // 이벤트의 흐름을 차단합니다.
         event.stopPropagation(); // 이벤트(버블링)를 막음
