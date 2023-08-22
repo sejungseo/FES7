@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <article class="parent">
+      <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+      </ol>
+    </article>
+    
+    <script>
+      const parent = document.querySelector('.parent');
+      parent.addEventListener('click', (event) => {
+        console.log(event.target); // 이벤트가 발생한 요소 => button
+        console.log(event.currentTarget); // event 핸들러가 달려있는 요소 => parent
+      currentTarget은 this와 동일한 역할
+      });
+      // target 속성을 통해서 이벤트가 발생한 요소를 알 수 있음 => 버튼마다 속성을 넣어주지 않아도 됨
+
+
+      // 이벤트 위임
+      const parent = document.querySelector('.parent');
+        parent.addEventListener('click', function (event) {
+          console.log(event.target); 
+
+      // this
+      const parent = document.querySelector('.parent');
+      parent.addEventListener('click', (event) => {
+        console.log(this); // parent
+        console.log(event.currentTarget); 
+      });
+
+          //이벤트가 발생한 대상을 조건식으로 특정하기
+          if (event.target.nodeName === "LI") { // nodeName은 uppercase
+            event.target.textContent = "버튼4"
+          }
+        });
+
+        myObj = {
+          name: 'jaehyun',
+          walk() {
+            parent.addEventListener('click', () => {
+              console.log(this.name, ' is walking'); //화살표 함수의 this => 상위스코프 myObj
+            })
+          }
+        }
+    </script>
+</body>
+</html>
