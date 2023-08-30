@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title></title></head><body><script>
+      // class Robot {
+      //   #password
+
+      //     constructor(name, pw) {
+      //       this.name = name;
+      //       this.#password = pw; // #을 안 넣어주면 변수와 함수명이 같은 set password 함수가 작동
+      //     }
+
+
+      //     sayYourName() {
+      //       console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      //     }
+
+      //     get password() {
+      //       return this.#password;
+      //     }
+
+      //     set password(pw) {
+      //       this.#password = pw; // #password가 아닌 password로 넣으면 무한반복
+      //     }
+      //   }
+
+      //   const robot = new Robot('liopn', 1234);
+
+
+        /////////////////////////////
+        class Robot {
+
+            constructor(name, pw) {
+              this.name = name;
+              this.password = pw; 
+            }
+
+
+            sayYourName() {
+              console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            get password() {
+              return this.password;
+            }
+
+            set password(pw) {
+              this._password = pw; // password로 넣으면 무한반복 되므로 _ 추가
+            }
+          }
+
+          const robot = new Robot('liopn', 1234);</script></body></html>
