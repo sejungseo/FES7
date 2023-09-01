@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+
+      const orderCoffee = new Promise((resolve, reject) => { // 약속이 이루어졌을때, 거절됐을 때
+        const requestObj = new XMLHttpRequest();
+        requestObj.open('GET', 'orderCoffee.txt');
+        requestObj.onreadystatechange = () => {
+          if (requestObj.readyState === 4) { // 통신 성공했나
+            if (requestObj.status === 200) { // 통신 들어왔나
+              const result = requestObj.responseText; // 요청이 이행된 상태
+              resolve(result);
+            } else { // 통신 실패 경우를 가정하는 코드 무조건 필수!
+              reject(new Error(`오늘의 커피 원두가 다 떨어졌습니다. ${requestObj.status}`));
+            }
+          }
+        };
+        requestObj.send();
+      });
+    
+      // console.log(orderCoffee);
+      orderCoffee.then((asyncResult) => { // 통신 성공하면 실행
+        console.log(asyncResult);
+      }).catch((error) => {
+        console.log(error);
+      });
+    </script>
+</body>
+</html>
