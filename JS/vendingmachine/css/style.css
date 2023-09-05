@@ -35,6 +35,7 @@ button {
 button:enabled {
   cursor: pointer;
 }
+
 img {
   vertical-align: top;
 }
@@ -174,7 +175,11 @@ main {
 }
 
 /* 선택한 버튼 */
-.btn-cola.on {
+/* .btn-cola.on {
+  box-shadow: 0 0 0 4px #6327fe;
+} */
+
+.btn-cola:active {
   box-shadow: 0 0 0 4px #6327fe;
 }
 
@@ -261,7 +266,7 @@ main {
 
   font-size: 9px;
 }
-.get-list li ~ li {
+.get-list li~li {
   margin-top: 6px;
 }
 .get-list li img {
