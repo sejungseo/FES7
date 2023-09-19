@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body,
+h1,
+h2,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  font: inherit;
+}
+
+input {
+  outline: none;
+  font: inherit;
+  
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-out-spin-button {
+-webkit-appearance: none;
+-moz-appearance:none;
+appearance:none;
+}
+
+body{
+  background: radial-gradient(293.21% 130.49% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Pretendard-Bold';
+}
+
+.timer_box {
+  width: 400px;
+  height: 360px;
+  margin: 60px 0;
+  padding: 48px 44px 40px;
+  box-sizing: border-box;
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+  border-radius: 16px;
+  background: linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%);
+}
+
+.tit_timer {
+  color: white;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #3D538A;
+}
+
+.timer_form {
+  display: flex;
+  flex-direction: row;
+  padding: 33px 0 40px;
+}
+
+.timer_form label {
+  color: var(--light, #A5B6EE);
+  font-size: 12px;
+}
+
+.timer_form input {
+  width: 80px;
+  height: 80px;
+  margin-top: 4px;
+  background-image: url(./images/box.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #FFF;
+  font-size: 40px;
+}
+
+.timer_form input::placeholder {
+  color: #FFF;
+}
+
+.btn_start,
+.btn_reset {
+  width: 112px;
+  height: 48px;
+  border-radius: 50px;
+  background: #324577;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.05) inset;
+  color: #617199;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn_start {
+  margin-right: 12px;
+  color: white;
+  background-color: #5180FF;
+  background-image: url(./images/start.png);
+  background-repeat: no-repeat;
+}
+
+.btn_reset {
+  color: white;
+  background-color: #FB7099;
+  background-image: url(./images/reset.png);
+  background-repeat: no-repeat;
+}
+
+.copyright {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  color: #8596BF;
+}
