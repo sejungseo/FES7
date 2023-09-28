@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+      article {
+        display: inline-block;
+        border: 3px solid black;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .viewer {
+        display: block;
+        font-size: 24px;
+        color: teal;
+        margin: 50px 0 50px;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <article>
+      <strong class="viewer"></strong>
+      <input class="inp-txt" type="text">
+      <!-- 서로 다른 언어의 코드가 섞여있다.(html, js) => 유지보수에 어려움 -->
+      <button class="btn-push" onclick="push()">적용</button>
+    </article>
+
+    <script>
+      // 전역변수의 사용. 아래 두 코드는 함수가 아니기 떄문에 테스트 자체가 불가능. class 안에 있든지, 함수 안에 있든지!
+      const viewer = document.querySelector('.viewer');
+      viewer.textContent = 'hello lions';
+
+      // push 함수의 단점: 재사용성이 떨어짐(ex. input-txt라는 클래스가 있어야 함)
+      function push(){
+        const inpTxt = document.querySelector('.inp-txt');
+        viewer.textContent = inpTxt.value;
+      }
+
+      // 테스트가 가능하려면!
+      /**
+       * 1. 테스트 대상이 UI에서 완전히 분리되어야 함
+       * 2. 모든 기능은 함수로 구현해야 함
+      */
+    </script>
+</body>
+</html>
