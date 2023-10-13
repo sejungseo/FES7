@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../login/Login.module.css'
 import { useState } from 'react'
+import { useSignup } from '../../hooks/useSignup';
 
 
 export default function Signup() {
@@ -9,6 +10,8 @@ export default function Signup() {
     // displayName은 파이어베이스에서 유저 정보에 저장 할 수 있는 속성중 하나입니다. 
     // 때문에 다른 변수명을 사용하지 말아주세요. ( 참고 : https://firebase.google.com/docs/reference/js/auth.md#updateprofile)
     const [displayName, setDisplayName] = useState('');
+
+    const {error, isPending, signup} = useSignup();
 
     const handleData = (event) => {
         if (event.target.type === "email") {
@@ -23,6 +26,7 @@ export default function Signup() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(email, password, displayName);
+        signup(email, password, displayName);
     }
 
 
@@ -94,7 +98,7 @@ export default function Signup() {
                     <input className="input-style" id="user-email" type="email" required onChange={handleData} value={email} />
 
                     <label className="label-style" htmlFor="user-pw">비밀번호</label>
-                    <input className="input-style" id="user-pw" type="password" required onChange={handleData} value={password} autoComplete='currnet-password' />
+                    <input className="input-style" id="user-pw" type="password" required onChange={handleData} value={password} autoComplete='current-password' />
 
                     <label className="label-style" htmlFor="user-nickname">닉네임</label>
                     <input className="input-style" id="user-nickname" type="text" required onChange={handleData} value={displayName} ></input>
